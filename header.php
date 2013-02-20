@@ -15,11 +15,11 @@
 	</head>
 	<body>
 		<?php global $wordpress_960; ?>
-		<div class="container_12">
+		<div class="container_24">
 			<header>
 
 				<!-- Site Description & Title -->
-				<hgroup id="header" class="grid_12 alpha omega">
+				<hgroup id="header" class="grid_24 alpha omega">
 					<h1><a href="<?php echo site_url(); ?>"><?php bloginfo('title'); ?></a></h1>
 					<?php
 					// Description is actually labelled "Tagline" in Wordpress 3.x
@@ -30,7 +30,7 @@
 				</hgroup>
 
 				<!-- Header Navigation -->
-				<div class="grid_8 alpha">
+				<div class="grid_16 alpha">
 					<?php wp_nav_menu( array(
 						'theme_location' => 'header',
 						'menu_class'     => 'nav-bar',
@@ -39,13 +39,13 @@
 				</div>
 				
 				<!-- Search -->
-				<div class="grid_4 omega">
+				<div class="grid_8 omega">
 					<?php get_search_form(); ?>
 				</div>
 				<div class="clear"></div>
 
 				<!-- Header Widgets -->
-				<aside class="grid_12 alpha omega">
+				<aside class="grid_24 alpha omega">
 					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Header') ) : ?><?php endif; ?>
 					<div class="clear"></div>
 				</aside>

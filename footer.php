@@ -11,13 +11,13 @@
 			<footer>
 
 				<!-- Footer Widgets -->
-				<aside class="grid_12 alpha omega">
+				<aside class="grid_24 alpha omega">
 					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer') ) : ?><?php endif; ?>
 					<div class="clear"></div>
 				</aside>
 
 				<!-- Footer Navigation -->
-				<div class="grid_12 alpha omega">
+				<div class="grid_24 alpha omega">
 					<?php
 					$options = get_option( 'wp960_theme_options' );
 					if ( $options['footer_navigation'] ) {

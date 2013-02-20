@@ -16,7 +16,7 @@ if ( !function_exists( 'wp960_get_columns' ) ) {
 		
 		// Left sidebar
 		if ( 'left' === $sidebars or 'both' === $sidebars ) :
-			$grid = 'both' === $sidebars ? 3 : 4;
+			$grid = 'both' === $sidebars ? 6 : 8;
 			?>
 			<aside class="grid_<?php echo $grid; ?> alpha">
 				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Left Sidebar') ) { _e( 'Left Sidebar', 'wp960' ); } ?>
@@ -26,20 +26,20 @@ if ( !function_exists( 'wp960_get_columns' ) ) {
 		// Main content
 		switch ( $sidebars ) {
 			case 'left':
-				$grid = 8;
+				$grid = 16;
 				$class = 'omega';
 				break;
 			case 'right':
-				$grid = 8;
+				$grid = 16;
 				$class = 'alpha';
 				break;
 			case 'both':
-				$grid = 6;
+				$grid = 12;
 				$class = '';
 				break;
 			case 'none':
 			default:
-				$grid = 12;
+				$grid = 24;
 				$class = 'alpha omega';
 				break;
 		}
@@ -54,7 +54,7 @@ if ( !function_exists( 'wp960_get_columns' ) ) {
 		
 		// Right Sidebar
 		if ( 'right' === $sidebars or 'both' === $sidebars ) :
-			$grid = 'both' === $sidebars ? 3 : 4; ?>
+			$grid = 'both' === $sidebars ? 6 : 8; ?>
 		<aside id="sidebar-blog" class="grid_<?php echo $grid; ?> omega">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Right Sidebar') ) { _e( 'Right Sidebar', 'wp960' ); } ?>
 		</aside>

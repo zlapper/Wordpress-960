@@ -1,0 +1,103 @@
+
+/*
+ * ==============================================================
+ * GENERATORS
+ * ==============================================================
+ */
+
+/* ================== GRID CLASS GENERATORS ================== */
+//CSS rules for each column class
+.column(@size) {
+  width: (@base + (@step * (@size - 1)));
+}
+
+//Recursive function to create the classes for the columns (.grid_1, .grid_2, etc)
+.create-columns(@column) when (@column > 0) {
+  .create-columns(@column - 1); //Make the recursive call to the next smaller column (so they are created from from )
+  (~".grid_@{column}") { .column(@column); } //Define the class and style for the current column
+}
+
+//Ends the recursion
+.create-columns (0) {}
+
+
+/* ================= PREFIX CLASS GENERATORS ================= */
+.prefix(@size) {
+  margin-left: (@step * @size) + @gap;
+  &.omega { margin-left: (@step * @size); }
+}
+
+.create-prefixes(@column) when (@column > 0) {
+  .create-prefixes(@column - 1);
+  (~".prefix_@{column}") { .prefix(@column); }
+}
+
+.create-prefixes (0) {}
+
+
+/* ================= SUFFIX CLASS GENERATORS ================= */
+.suffix(@size) {
+  margin-right: (@step * @size) + @gap;
+  &.alpha { margin-right: (@step * @size); }
+}
+
+.create-suffixes(@column) when (@column > 0) {
+  .create-suffixes(@column - 1);
+  (~".suffix_@{column}") { .suffix(@column); }
+}
+
+.create-suffixes (0) {}
+
+/* ================== PUSH CLASS GENERATORS ================== */
+.push(@size) {
+  left: (@step * @size);
+}
+
+.create-pushes(@column) when (@column > 0) {
+  .create-pushes(@column - 1);
+  (~".push_@{column}") { .push(@column); }
+}
+
+.create-pushes (0) {}
+
+/* ================== PULL CLASS GENERATORS ================== */
+.pull(@size) {
+  left: -(@step * @size);
+}
+
+.create-pulls(@column) when (@column > 0) {
+  .create-pulls(@column - 1);
+  (~".pull_@{column}") { .pull(@column); }
+}
+
+.create-pulls (0) {}
+
+/*
+ * ==========================================================
+ * CONTAINER 24 MIXIN (MAIN)
+ * ==========================================================
+ */
+
+.fixed-grid(@width: 960px, @gap: 5px, @columns: 24){
+  @base: (@width / @columns) - (@gap * 2);
+  @step: (@width / @columns);
+
+  body { min-width: @width; }
+
+  //.container_24 {
+  (~".container_@{columns}") {
+    margin-left: auto;
+    margin-right: auto;
+    width: @width;
+
+    .create-columns(@columns);
+    .create-prefixes(@columns - 1);
+    .create-suffixes(@columns - 1);
+    .create-pushes(@columns - 1);
+    .create-pulls(@columns - 1);
+
+    //&:before, &:after{ .clearfix-ba(); }
+    //&:after{ .clearfix-a(); }
+    //.clearfix();
+  }
+}

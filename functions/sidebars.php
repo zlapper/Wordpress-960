@@ -23,14 +23,14 @@ if ( !function_exists('wp960_register_sidebars') ) {
 		));
 		register_sidebar(array(
 			'name' => 'Header',
-			'before_widget' => '<div class="header widget grid_3">',
+			'before_widget' => '<div class="header widget grid_6">',
 			'after_widget' => '</div>',
 			'before_title' => '<span class="header-widget-title">',
 			'after_title' => '</span>'
 		));
 		register_sidebar(array(
 			'name' => 'Footer',
-			'before_widget' => '<div class="footer widget grid_3">',
+			'before_widget' => '<div class="footer widget grid_6">',
 			'after_widget' => '</div>',
 			'before_title' => '<span class="footer-widget-title">',
 			'after_title' => '</span>'
