@@ -6,10 +6,21 @@
  * @see footer.php
  */
 ?><!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta charset="<?php bloginfo( 'charset' ); ?>" />
+
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+
+		<!-- Set the viewport width to device width for mobile -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
 		<title><?php bloginfo('name'); ?> | <?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><![endif]-->
+
 		<link rel="stylesheet" href="<?php bloginfo('template_directory')?>/css/normalize.css"  type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php bloginfo('template_directory')?>/css/grid.css"  type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen" />
