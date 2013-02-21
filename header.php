@@ -10,6 +10,8 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<title><?php bloginfo('name'); ?> | <?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
+		<link rel="stylesheet" href="<?php bloginfo('template_directory')?>/css/normalize.css"  type="text/css" media="screen" />
+		<link rel="stylesheet" href="<?php bloginfo('template_directory')?>/css/grid.css"  type="text/css" media="screen" />
 		<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen" />
 		<?php wp_head(); ?>
 	</head>

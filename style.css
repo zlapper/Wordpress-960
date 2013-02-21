@@ -1,3 +1,6 @@
+/* --------------------------------
+   Alignment
+   -------------------------------- */
 /*
  * Theme Name: WordPress: 960 Grid System
  * Theme URI: https://github.com/wp960/WordPress-960
@@ -7,8 +10,64 @@
  * Version: 0.3
  * Tags: 960, grid, system, white, framework, boilerplate
  */
-
-@import url('css/reset.css');
-@import url('css/text.css');
-@import url('css/960.css');
-@import url('css/style.css');
+/* --------------------------------
+   Alignment
+   -------------------------------- */
+.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12px;
+}
+.alignleft {
+  float: left;
+  margin-right: 12px;
+}
+.alignright {
+  float: right;
+  margin-left: 12px;
+}
+.aligncenter,
+.alignleft,
+.alignright {
+  display: block;
+  margin-bottom: 12px;
+}
+/* --------------------------------
+   Meta Data
+   -------------------------------- */
+.post-meta {
+  list-style-type: none;
+}
+.post-meta li {
+  display: inline;
+  margin-left: 0;
+}
+.post-meta li:before {
+  content: '·';
+  margin: 0 0.5em;
+}
+.post-meta li:first-child:before {
+  display: none;
+}
+/* --------------------------------
+   Navigation
+   -------------------------------- */
+nav ul {
+  list-style-type: none;
+}
+nav ul li {
+  display: inline;
+  margin-left: 0;
+  margin-right: 0.5em;
+}
+/* --------------------------------
+   Pagination
+   -------------------------------- */
+.pagination {
+  list-style-type: none;
+  text-align: center;
+}
+.pagination li {
+  display: inline;
+  margin: 0 0.5em;
+}
