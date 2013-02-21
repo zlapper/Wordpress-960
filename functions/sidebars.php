@@ -35,6 +35,13 @@ if ( !function_exists('wp960_register_sidebars') ) {
 			'before_title' => '<span class="footer-widget-title">',
 			'after_title' => '</span>'
 		));
+		register_sidebar(array(
+			'name' => 'Search',
+			'before_widget' => '<div class="search widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h2 class="widget-title">',
+			'after_title' => '</h2>'
+		));
 	}
 }
 

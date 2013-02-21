@@ -42,7 +42,7 @@
 				
 				<!-- Search -->
 				<div class="grid_8 omega">
-					<?php get_search_form(); ?>
+					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Search') ) : ?><?php endif; ?>
 				</div>
 				<div class="clear"></div>
 
